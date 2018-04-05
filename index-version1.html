@@ -1,0 +1,849 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-gb" class="no-js"> <!--<![endif]-->
+
+<head>
+	<title>Manamix - multipurpose template</title>
+	
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Google fonts - witch you want to use - (rest you can just remove) -->
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Archivo+Narrow|Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=DroidSans">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arimo">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=SansitaOne">
+    
+    <!-- ######### CSS STYLES ######### -->
+	
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+    
+    <!-- responsive devices styles -->
+	<link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
+    
+    <!-- CSS -->
+	<link rel = "stylesheet" media = "screen" href = "js/iosslider/common.css" />
+	<link rel = "stylesheet" media = "screen" href = "js/shortslide/common.css" />
+    
+    <!-- style switcher -->
+    <link rel = "stylesheet" media = "screen" href = "js/style-switcher/color-switcher.css" />
+    
+        
+    <!-- ######### JS FILES ######### -->
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+    <!-- style switcher -->
+    <script src="js/style-switcher/jquery-1.js"></script>
+    <script src="js/style-switcher/styleselector.js"></script>
+    
+    <!-- main menu -->
+    <script type="text/javascript" src="js/mainmenu/ddsmoothmenu.js"></script>
+    <script type="text/javascript" src="js/mainmenu/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/mainmenu/selectnav.js"></script>
+    
+		
+        <!-- shortslide -->
+        <script src = "js/shortslide/_lib/jquery-1.8.2.min.js"></script>
+		<script src = "js/shortslide/_lib/jquery.easing-1.3.js"></script>
+		<script src = "js/shortslide/_js/common.js"></script>
+        
+    	<!-- iosSlider plugin -->
+		<script src = "js/iosslider/_src/jquery.iosslider.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$('.iosSlider').iosSlider({
+					desktopClickDrag: true,
+					snapToChildren: true,
+					navSlideSelector: '.sliderContainer .slideSelectors .item',
+					onSlideComplete: slideComplete,
+					onSliderLoaded: sliderLoaded,
+					onSlideChange: slideChange,
+					autoSlide: true,
+					scrollbar: true,
+					scrollbarContainer: '.sliderContainer .scrollbarContainer',
+					scrollbarMargin: '0',
+					scrollbarBorderRadius: '0'
+				});
+				
+			});
+			
+			function slideChange(args) {
+						
+				$('.sliderContainer .slideSelectors .item').removeClass('selected');
+				$('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+			
+			}
+			
+			function slideComplete(args) {
+				
+				if(!args.slideChanged) return false;
+				
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					left: '50px',
+					opacity: '1'
+				}, 400, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '50px',
+					opacity: '1'
+				}, 400, 'easeOutQuint');
+				
+			}
+			
+			function sliderLoaded(args) {
+					
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					left: '50px',
+					opacity: '1'
+				}, 400, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '50px',
+					opacity: '1'
+				}, 400, 'easeOutQuint');
+				
+				slideChange(args);
+				
+			}
+		</script>
+    
+</head>
+
+<body>
+
+
+
+
+<div id="page-wrapper">
+
+	<!-- top show hide plugin --> 
+    <div class="slidingDiv">This <strong>Manamix</strong> theme produces <strong>3 different style menus.</strong> - Please check
+    <a href="index.html" target="_parent"><strong>menu one</strong></a> <a href="http://gsrthemes.com/manamix-two/index.html" target="_parent"><strong>menu two</strong></a> <a href="http://gsrthemes.com/manamix-three/index.html" target="_parent"><strong>menu three</strong></a>
+    </div>
+    <div class="top-border-line"></div>
+    <a href="#" class="show_hide"></a>
+
+<!-- Header
+======================================= -->
+	<div class="container">
+            	
+    	<!-- header --> 
+        <header id="header">
+          	
+       	<!-- logo -->
+        <div class="logo-area">
+            <h1 id="site-logo"><a href="index.html" title="Manamix">Mana<i>mix</i></a></h1>
+        </div><!-- end logo -->
+        
+      <!-- top search / contact details -->
+       <div class="seven columns">
+          <div class="top-search">
+            <ul>
+              <li><img src="images/email-icon-top.jpg" alt="RSS" /><a href="#">name@company.com</a></li>
+              <li><img src="images/phone-icon-top.jpg" alt="Facebook" />1234-567-89000</li>
+            </ul>
+            
+            <div class="widget_search">
+              <form method="get" class="search-form">
+                <input type="submit" value="Search" class="search-submit-button" />
+                <input type="text" value="Search" onFocus="this.value=''" onBlur="this.value='Search'" name="s" class="search-text-box" />
+              </form> 
+            </div>
+           </div>
+        </div><!-- end search / contact details -->
+        </header><!-- end header -->
+
+<!-- Navigation
+======================================= -->     
+       <!-- main menu -->
+       <div class="seventeen columns">
+       <nav id="access" class="access" role="navigation">
+        <div id="menu" class="menu">
+        	
+        	<ul id="tiny">
+            	<li class="homebut-icon"><a href="index.html" title="Home"><img src="images/mainmenu-home-icon.png" alt="Home" /></a></li>
+				<li><a href="#">Sliders</a>
+					<ul>
+                        <li><a href="index-4.html">Slider Type One</a></li>					
+						<li><a href="index-1.html">Slider Type Two</a></li>
+						<li><a href="index-2.html">Static Image Page</a></li>
+						<li><a href="index-3.html">Video Page</a></li>
+			        </ul>
+				</li>
+				<li><a href="#">Features</a>
+					<ul>
+                        <li><a href="typography.html">Typography</a></li>
+						<li><a href="elements.html">Elements</a></li>
+                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
+						<li><a href="columns.html">Page Columns</a></li>
+						<li><a href="testimonials.html">Testimonials</a></li>
+						<li><a href="faqs.html">FAQs</a></li>
+						<li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="#">Responsive Design</a></li>                              
+                        <li><a href="#">Google Fonts</a></li>
+                        <li><a href="#">Custom Backgrounds</a></li> 
+                        <li><a href="#">Unlimited Colors</a></li>
+                        <li><a href="#">PSD Files Included</a></li>
+                        <li><a href="#">Dedicated Support</a></li> 
+                        <li><a href="#">Unlimited Patterns</a></li>                              
+                        <li><a href="#">Clean &amp; Valid Code</a></li>
+                        <li><a href="pricing-tables.html">Sample Third Leavel</a>
+                           	<ul>
+                            	<li><a href="#">Third Leavel One</a></li>
+                                <li><a href="#">Third Leavel Two</a></li>
+                                <li><a href="#">Third Leavel Three</a></li>
+                            </ul>
+                        </li>
+			        </ul>
+				</li>
+				<li><a href="#">Pages</a>
+					<ul>
+			            <li><a href="standard-page.html">Standard/About Page</a></li>
+                        <li><a href="services.html">Services</a></li>
+						<li><a href="full-width.html">Full Width Page</a></li>
+						<li><a href="left-sidebar.html">Left Sidebar Page</a></li>
+						<li><a href="right-sidebar.html">Right Sidebar Page</a></li>
+						<li><a href="left-nav.html">Left Navigation</a></li>
+						<li><a href="right-nav.html">Right Navigation</a></li>
+						<li><a href="404.html">404 Error Page</a></li>
+			        </ul>
+				</li>
+				<li><a href="#">Portfolio</a>
+                	<ul>
+                    	<li><a href="portfolio-one.html">1 Column</a></li>
+						<li><a href="portfolio-two.html">2 Columns</a></li>
+						<li><a href="portfolio-three.html">3 Columns</a></li>
+						<li><a href="portfolio-four.html">4 Columns</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Blog</a>
+                	<ul>
+                    	<li><a href="blog.html">Blog Index</a></li>
+						<li><a href="blog-post.html">Blog Post</a></li>
+						<li><a href="blog-archive.html">Blog Archive</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="selected">Home Versions</a>
+                	<ul>
+                    	<li><a href="index-version1.html">Home Versions 1</a></li>
+						<li><a href="index-version2.html">Home Versions 2</a></li>
+						<li><a href="index-version3.html">Home Versions 3</a></li>
+                        <li><a href="index-version4.html">Home Versions 4</a></li>
+                        <li><a href="index-version5.html">Home Versions 5</a></li>
+                    </ul>
+                </li>
+			</ul>
+		</div>
+  	</nav>
+    </div><!-- end main menu -->
+  </div>
+  <!-- end header container -->
+  
+<!-- Slider
+======================================= -->  
+  <!-- slider --> 
+  <div class="container">
+  
+  <div class="home-version1"><h2>Manamix  is a <b>Responsive HTML5 / CSS3</b> simple, clean and Professional theme. This theme suitable for Company, Business, Blog and Portfolio. Create Outstanding <b>Website or Blog</b> in Minutes!</h2></div>
+  	
+    <div class="columns seventeen">
+	
+     <div class = 'fluidHeight'>
+			
+			<div class = 'sliderContainer'>
+			
+				<div class = 'iosSlider'>
+				
+					<div class = 'slider'>
+					
+						<div class = 'item item1'>
+							<div class = 'inner'>							
+								<div class = 'text1'><span>Welcome to <b>Manamix</b></span></div>
+					
+								<div class = 'text2'><span>Manamix Provides Smart and Flexible Design Unique Pages,<br />Awesome Slideshows, Unique Color Variations.<br />Easy-to-customize and fully Featured design.<br />Create Outstanding Website  in Minutes!</span>
+                                <div class="morebut"><a href="#">know more features</a></div>
+                                </div>
+							</div>
+						</div>
+						
+						<div class = 'item item2'>
+							<div class = 'inner'>
+								<div class = 'text1'><span>Responsive <b>layout</b></span></div>
+					
+								<div class = 'text2'><span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />Ipsum has been the industry's standard dummy text ever.<br />Galley of type and scrambled make specimen book.</span>
+                                <div class="morebut"><a href="#">know more features</a></div>
+                                </div>
+							</div>
+						</div>
+						
+						<div class = 'item item3'>
+							<div class = 'inner'>
+								<div class = 'text1'><span>Esay-to<b>-use</b></span></div>
+					
+								<div class = 'text2'><span>Lorem Ipsum is simply dummy text<br />of printing and typesetting industry.</span>
+                                <div class="morebut"><a href="#">know more features</a></div>
+                                </div>
+							</div>
+						</div>
+						
+						<div class = 'item item4'>
+							<div class = 'inner'>
+								<div class = 'text1'><span>Unique <b>colors</b></span></div>
+					
+								<div class = 'text2'><span>Lorem Ipsum is simply dummy text printing and typesetting industry.<br />Ipsum has been the industry's standard dummy text ever.<br />Galley of type and scrambled make specimen book.</span>
+                                <div class="morebut"><a href="#">know more features</a></div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class = 'slideSelectors'>
+				
+					<div class = 'item selected'>
+                        <ul class="iosslider-item-list">
+                        	<li>
+                            <i class="iosslider-item-simg1"></i>
+                            <strong>Smart and flexible</strong>
+                            <p>simply dummy text of the typesetting industry.</p>
+                            </li>
+                        </ul>
+                    </div>
+					
+					<div class = 'item'>
+                    	<ul class="iosslider-item-list">
+                        	<li>
+                            <i class="iosslider-item-simg2"></i>
+                            <strong>Responsive layout</strong>
+                            <p>simply dummy text of the typesetting industry.</p>
+                            </li>
+                        </ul>
+                    </div>
+					
+					<div class = 'item'>
+                    	<ul class="iosslider-item-list">
+                        	<li>
+                            <i class="iosslider-item-simg3"></i>
+                            <strong>Esay-to-use</strong>
+                            <p>simply dummy text of the typesetting industry.</p>
+                            </li>
+                        </ul>
+                    </div>
+					
+					<div class = 'item'>
+                    	<ul class="iosslider-item-list">
+                        	<li>
+                            <i class="iosslider-item-simg4"></i>
+                            <strong>Unique colors</strong>
+                            <p>simply dummy text of the typesetting industry.</p>
+                            </li>
+                        </ul>
+                    </div>
+				</div>
+			</div>
+		</div>
+    </div>
+  </div>
+  <!-- end slider -->
+
+
+<!-- Content
+======================================= -->  
+<div id="content">
+	<div class="container">
+    	
+        <!-- about site box -->
+    	<div class="five columns">
+				<i class="titles-icon1"></i>
+				<h2>About site</h2>
+                <img src="images/site-img1.jpg" alt="" class="img-border" />
+                <b>There are many variations of passages of but the majority have alteration.</b>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorm Ipsum has been the industry's standard dummy text  took a galley of type and scrambed it to make a type specimen book.</p>
+        </div><!-- end about site box -->
+        
+        <!-- why us box -->
+        <div class="five columns">
+            <i class="titles-icon2"></i>
+            <h2>Why choose us</h2>
+            <img src="images/site-img2.jpg" alt="" class="img-border" />
+                <b>There are many variations of passages of but the majority have alteration.</b>
+                    <ul class="arrows-list">
+                       <li>Donec venenatis tibulum egestas mattis</li>
+                       <li>Aenean rutrum sapien tristique dapibus</li>
+                       <li>Pellentesque et vel pellentesque dictum</li>
+                       <li>Maecenas et nisi nibh commodo rutrum</li>
+                    </ul>
+        </div><!-- end why us box -->
+        
+        <!-- services box -->
+		<div class="five columns">
+				<i class="titles-icon3"></i>
+				<h2 class="exta">Our services</h2>
+                
+                 <ul class="home-services-list">
+                    <li>
+                    <i class="services-icon1"></i>
+                    <strong><a href="#">Market researches</a></strong>
+                    <p>There are many vations passages</p>
+                    </li>
+                    
+                    <li>
+                    <i class="services-icon2"></i>
+                    <strong><a href="#">Management consulting</a></strong>
+                    <p>Dmbarrassing hidden in the middle</p>
+                    </li>
+                    
+                    <li>
+                    <i class="services-icon3"></i>
+                    <strong><a href="#">Professional advice</a></strong>
+                    <p>Gmbarrassing hidden in the middle</p>
+                    </li>
+                    
+                    <li>
+                    <i class="services-icon4"></i>
+                    <strong><a href="#">Customer support</a></strong>
+                    <p>Looked up one of the more obscure</p>
+                    </li>
+                </ul>
+		</div><!-- end services box -->
+    	
+        <div class="clearfix"></div>
+ 
+        
+<!-- freshworks gallery -->
+<div class="freshworks-gallery">
+
+	<div class="freshworks-content">
+    	<h2>Fresh works</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting indu standard dummy text  took a galley of type and specimen book.</p>
+        <span class="morebut-small"><a href="#">View all works</a></span>    </div>
+
+	<div class = 'short-width-slider-2'>
+		
+			<div class = 'slider'>
+			
+				<div class = 'item' id = 'item1'>
+                    <div class="freshwork-img-box">
+                    	<img src="images/site-works-img1.jpg" alt="" />
+                    	<span>Passages of majorite</span>                    </div>
+                </div>
+				<div class = 'item' id = 'item2'>
+                	<div class="freshwork-img-box">
+                    	<img src="images/site-works-img2.jpg" alt="" />
+                    	<span>Passages of majorite</span>                    </div>
+                </div>
+				<div class = 'item' id = 'item3'>
+                	<div class="freshwork-img-box">
+                        <img src="images/site-works-img3.jpg" alt="" />
+                    	<span>Passages of majorite</span>                    </div>
+                </div>
+				<div class = 'item' id = 'item4'>
+                	<div class="freshwork-img-box">
+                    	<img src="images/site-works-img2.jpg" alt="" />
+                    	<span>Passages of majorite</span>                    </div>
+                </div>
+                <div class = 'item' id = 'item5'>
+                	<div class="freshwork-img-box">
+                    	<img src="images/site-works-img3.jpg" alt="" />
+                    	<span>Passages of majorite</span>                    </div>
+                </div>
+			</div>
+			
+			<div class = 'prev'></div>
+			<div class = 'next'></div>
+		</div>
+	</div><!-- end freshworks gallery -->
+
+	<!-- latest blog / news section -->
+	<div class="home-latestbn-section">
+        	
+            <div class="section-box">
+				<i class="titles-icon4"></i>
+				<h2>Latest from blog/news</h2>
+                
+                    <ul class="home-latest-list">
+                
+                    <li>
+                    <a href="#"><img src="images/site-recentblogs-img1.jpg" alt="" class="border-one" /></a>
+                    <strong><a href="#">There are variations alteration</a></strong>
+                    <i>January 18, 2013</i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and specimen book.</p>
+                    </li>
+                    
+                    <li>
+                    <a href="#"><img src="images/site-recentblogs-img2.jpg" alt="" class="border-one" /></a>
+                    <strong><a href="#">Majority have alteration in some</a></strong>
+                    <i>January 18, 2013</i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and specimen book.</p>
+                    </li>
+                    
+                    <li>
+                    <a href="#"><img src="images/site-recentblogs-img3.jpg" alt="" class="border-one" /></a>
+                    <strong><a href="#">Sonsectetu from a Ipsum passage</a></strong>
+                    <i>January 18, 2013</i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and specimen book.</p>
+                    </li>
+                </ul>
+			</div>
+        </div><!-- end latest blog / news section -->
+        
+    <!-- client says -->    
+	<div class="home-clientsays-section">
+                
+                    <div class="section-box">
+                    <i class="titles-icon5"></i>
+                    <h2>What client say's</h2>
+                     
+                     <div class="home-clientsays">
+                     	<div class="home-clientsays-img"><img src="images/site-testi-icon.png" alt="" /></div>
+                        <div class="home-clientsays-content">
+                        <b>There are variations alteration.</b>
+                        <p>when an unknown printer took a galley of type and scrambled it to make a type vived not only five the leap into typesetting.</p>
+                        <i>- David Harrison</i>                        </div>
+                     </div>
+                     </div>
+        </div><!-- end client says -->
+        
+        
+    <!-- customer/partners logos -->    
+	<div class="home-cplogoes-section">
+                
+          <div class="section-box">
+          <i class="titles-icon6"></i>
+          <h2>Customer/partners</h2>
+                     
+                   
+			<div class = 'short-width-slider-3'>
+		
+			<div class = 'slider'>
+			
+				<div class = 'item' id = '1'>
+                    <div class="freshwork-img-box"><img src="images/sample-logo1.jpg" alt="" /></div>
+                </div>
+				<div class = 'item' id = '2'>
+                	<div class="freshwork-img-box"><img src="images/sample-logo2.jpg" alt="" /></div>
+                </div>
+				<div class = 'item' id = '3'>
+                	<div class="freshwork-img-box"><img src="images/sample-logo3.jpg" alt="" /></div>
+                </div>
+				<div class = 'item' id = '4'>
+                	<div class="freshwork-img-box"><img src="images/sample-logo4.jpg" alt="" /></div>
+                </div>
+                <div class = 'item' id = '5'>
+                	<div class="freshwork-img-box"><img src="images/sample-logo3.jpg" alt="" /></div>
+                </div>
+			</div>
+			
+			<div class = 'prev'></div>
+			<div class = 'next'></div>
+		</div>
+      	</div>
+        </div><!-- end customer/partners logos -->
+  
+      	<div class="clearfix"></div>
+    </div>
+</div>
+
+<!-- Footer
+======================================= -->    
+<div id="page-footer">
+
+	<div class="twitter-widgett">
+    
+    	<div class="boxleft"></div>
+        
+        	<div class="boxcenter">
+            
+            	<div class="boxcenter-two">
+                
+                	<img src="images/twitter-icon-main.jpg" alt="" />
+						
+	<div class="twtr-widget-main">
+    <script src="js/twitter/widget.js"></script>
+            <!-- first box -->
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'profile',
+              rpp: 4,
+              interval: 6000,
+              width: true,
+              height: true,
+              theme: {
+                shell: {
+                  background: 'transparent',
+                  color: '#333'
+                },
+                tweets: {
+                  background: 'transparent',
+                  color: '#eee',
+                  links: '#9e9e9e'
+                }
+              },
+              features: {
+                scrollbar: false,
+                loop: false,
+                live: false,
+                hashtags: true,
+                timestamp: true,
+                avatars: false,
+                behavior: 'all'
+              }
+            }).render().setUser('gsrthemes9').start();
+            </script>
+	</div>
+			</div>
+                
+                </div>
+                
+          	<div class="boxright"></div>
+            
+            </div><!-- end twitter widget -->  
+        
+   <footer>
+		
+        <div class="footer-allcolumns">
+        
+			<div class="one-fourth">
+				<h1 id="footer-logo">Manamix</h1>
+                	<ul class="address-liste">
+                    	<li class="icon1">Name of the Company<br />2901 Marmora Road, Glassgow, Seattle, WA 98122-1090</li>
+                        <li class="icon2">1234-567-89000</li>
+                        <li class="icon3">0123-4567-8900</li>
+                        <li class="worldmap"></li>
+                    </ul>						
+			</div><!-- end column one -->
+            
+            <div class="one-fourth">
+				<h2>Useful links</h2>
+                    <ul class="arrows-list-three">
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Professional Research</a></li>
+                        <li><a href="#">Our Development</a></li>
+                        <li><a href="#">Partnership With Us</a></li>
+                        <li><a href="#">Company Carreer</a></li>
+                        <li><a href="#">New Technology</a></li>
+                        <li><a href="#">Client Testimonials</a></li>
+                    </ul>                						
+			</div><!-- end column two -->
+            
+            <div class="one-fourth">
+				<h2>Get in touch</h2>
+                	
+                <ul class="socials-list">
+                <li><a href="#" title="facebook"><img src="images/footer-social-icon1.png" alt="" />Connect with facebook</a></li>
+                <li><a href="#" title="twitter"><img src="images/footer-social-icon2.png" alt="" />Follow on twitter</a></li>
+                <li><a href="#" title="google plus"><img src="images/footer-social-icon3.png" alt="" />Sharing on Google+</a></li>
+     			<li><a href="#" title="you tube"><img src="images/footer-social-icon4.png" alt="" />Share videos on YouTube</a></li>
+                <li><a href="#" title="linked in"><img src="images/footer-social-icon5.png" alt="" />Connect with linkedin</a></li>
+                <li><a href="#" title="rss"><img src="images/footer-social-icon6.png" alt="" />Subscribe rss feed</a></li>
+                </ul>
+                						
+			</div><!-- end column three -->
+            
+            <div class="one-fourth last">
+				<h2>Flickr photos</h2>
+                <!-- Start of Flickr Badge -->
+                    
+                    <div id="flickr_badge_wrapper"> 
+					<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=h&amp;source=user&amp;user=93382411%40N07"></script>
+                    </div><!-- End of Flickr Badge -->
+                						
+			</div><!-- end column four -->
+            
+        </div>
+            
+		
+	
+	<div class="copyright-info">
+
+		<span class="leaft">Copyright © 2013 Manamix.com. All rights reserved.</span>
+        <span class="reght"><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></span>
+
+	</div><!-- end copyright info -->
+
+</footer>
+ 
+</div><!-- end footer --> 
+
+<!-- style switcher -->
+<script type="text/javascript" src="js/style-switcher/styleswitcher.js"></script>
+<link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="blue" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/darkblue.css" title="darkblue" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/green.css" title="green" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/orange.css" title="orange" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/violet.css" title="violet" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/pink.css" title="pink" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/lime.css" title="lime" />
+<link rel="alternate stylesheet" type="text/css" href="css/colors/tan.css" title="tan" />
+
+<div id="style-selector">
+    <div class="style-selector-wrapper">
+        <span class="title">Choose Theme Options</span>
+        <div>        
+
+<span class="title-sub"></span>
+<div class="styles">     
+<script type="text/javascript">
+var theTarget = "_parent";
+function goThere(){
+	if(!document.theForm.theMenu.selectedIndex==""){
+		window.open(document.theForm.theMenu.options[document.theForm.theMenu.selectedIndex].value,theTarget,"");
+	}
+}
+</script>
+<form class="menu-fswitcher" name="theForm">
+<select name="theMenu" size=1 onChange="goThere()">
+  <option selected>3 different style menus</option>
+  <option value="index.html">Default Style</option>
+  <option value="http://gsrthemes.com/manamix-two/index.html">Style Two</option>
+  <option value="http://gsrthemes.com/manamix-three/index.html">Style Three</option>
+</select>
+</form>
+</div>
+ 
+<span class="title-sub2">Predefined Color Skins</span>
+<ul class="styles">     
+<li><a href="#" onClick="setActiveStyleSheet('default'); return false;"><span class="pre-color-skin1"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('blue'); return false;"><span class="pre-color-skin2"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('darkblue'); return false;"><span class="pre-color-skin3"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('green'); return false;"><span class="pre-color-skin4"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('orange'); return false;"><span class="pre-color-skin5"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('violet'); return false;"><span class="pre-color-skin6"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pink'); return false;"><span class="pre-color-skin7"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('lime'); return false;"><span class="pre-color-skin8"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('tan'); return false;"><span class="pre-color-skin9"></span></a></li>
+
+</ul>
+
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-one.css" title="pattern-one" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-two.css" title="pattern-two" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-three.css" title="pattern-three" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-four.css" title="pattern-four" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-five.css" title="pattern-five" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-six.css" title="pattern-six" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-seven.css" title="pattern-seven" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-eight.css" title="pattern-eight" />
+<link rel="alternate stylesheet" type="text/css" href="css/bg-patterns/pattern-nine.css" title="pattern-nine" />
+
+<!-- end Predefined Color Skins --> 
+
+
+<span class="title-sub2">BG Patterns</span>
+
+<ul class="styles">     
+<li><a href="#" onClick="setActiveStyleSheet('default'); return false;"><span class="bg-patterns1"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-one'); return false;"><span class="bg-patterns2"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-two'); return false;"><span class="bg-patterns3"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-three'); return false;"><span class="bg-patterns4"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-four'); return false;"><span class="bg-patterns5"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-five'); return false;"><span class="bg-patterns6"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-six'); return false;"><span class="bg-patterns7"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-seven'); return false;"><span class="bg-patterns8"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-eight'); return false;"><span class="bg-patterns9"></span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('pattern-nine'); return false;"><span class="bg-patterns10"></span></a></li>
+
+
+</ul><!-- end BG Patterns --> 
+
+
+<link rel="alternate stylesheet" type="text/css" href="css/google-fonts/font-one.css" title="font-one" />
+<link rel="alternate stylesheet" type="text/css" href="css/google-fonts/font-two.css" title="font-two" />
+<link rel="alternate stylesheet" type="text/css" href="css/google-fonts/font-three.css" title="font-three" />
+<link rel="alternate stylesheet" type="text/css" href="css/google-fonts/font-four.css" title="font-four" />
+<link rel="alternate stylesheet" type="text/css" href="css/google-fonts/font-five.css" title="font-five" />
+
+<span class="title-sub2">Font Style</span>
+
+<ul class="styles">
+     
+<li><a href="#" onClick="setActiveStyleSheet('default'); return false;"><span class="google-font1">Oswald</span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('font-one'); return false;"><span class="google-font2">Droid Sans</span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('font-two'); return false;"><span class="google-font3">Arvo</span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('font-three'); return false;"><span class="google-font4">Arimo</span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('font-four'); return false;"><span class="google-font5">Vollkorn</span></a></li>
+
+<li><a href="#" onClick="setActiveStyleSheet('font-five'); return false;"><span class="google-font6">Sansita</span></a></li>
+
+</ul>
+
+<a href="#" class="close icon-chevron-right"></a>  
+    
+</div>
+
+</div>
+
+</div><!-- end style switcher -->
+  
+<a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
+
+</div>
+
+
+
+<script type="text/javascript" src="js/mainmenu/scripts.js"></script>
+
+
+<!-- top show hide plugin script-->
+<script src="js/show-hide-plugin/showHide.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+ 
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+ 
+        $('.scrollup').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+ 
+    });
+</script>	
+
+</body>
+</html>
